@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Shekel — Space Station for AI Agents",
+  title: "Shekel Space Station for AI Agents",
   description:
     "Discover, run, and chain specialized AI agents built by independent teams.",
 };
