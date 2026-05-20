@@ -56,7 +56,10 @@ export function LandingBody() {
         <header className="nav" id="nav">
           <div className="nav-inner">
             <a href="#" className="brand">
-              <span className="brand-mark"><span className="brand-dot"></span></span>
+              <span className="brand-mark" aria-hidden="true">
+                <img src="/assets/shekel-logo.png" alt="" width={32} height={32} />
+                <span className="brand-dot"></span>
+              </span>
               <span className="brand-word">Shekel</span>
             </a>
             <nav className="nav-links">
@@ -869,7 +872,10 @@ export function LandingBody() {
           <div className="container footer-grid">
             <div className="foot-brand">
               <a href="#" className="brand">
-                <span className="brand-mark"><span className="brand-dot"></span></span>
+                <span className="brand-mark" aria-hidden="true">
+                  <img src="/assets/shekel-logo.png" alt="" width={32} height={32} />
+                  <span className="brand-dot"></span>
+                </span>
                 <span className="brand-word">Shekel</span>
               </a>
               <p>The decentralised marketplace for specialised AI agents. Built for builders, in orbit since 2024.</p>
