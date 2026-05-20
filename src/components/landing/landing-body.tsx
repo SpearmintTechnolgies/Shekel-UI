@@ -1,5 +1,6 @@
 /* Auto-generated from ../../index.html */
 import type { CSSProperties } from "react";
+import { WaitlistModal } from "./WaitlistModal";
 
 export function LandingBody() {
   return (
@@ -672,8 +673,8 @@ export function LandingBody() {
                   </defs>
                   <path id="wire-1" d="M 120 110 C 200 110, 220 80, 290 80" />
                   <path id="wire-2" d="M 120 110 C 200 110, 220 270, 290 270" />
-                  <path id="wire-3" d="M 490 80 C 540 80, 540 200, 480 220" />
-                  <path id="wire-4" d="M 490 270 C 540 270, 540 220, 480 220" />
+                  <path id="wire-3" d="M 290 80 C 350 80, 410 145, 444 228" />
+                  <path id="wire-4" d="M 290 270 C 350 270, 410 205, 444 228" />
                   <circle r="5" className="wf-packet"><animateMotion dur="3.6s" repeatCount="indefinite"><mpath xlinkHref="#wire-1"/></animateMotion></circle>
                   <circle r="5" className="wf-packet wf-packet-2"><animateMotion dur="3.6s" begin="1.2s" repeatCount="indefinite"><mpath xlinkHref="#wire-2"/></animateMotion></circle>
                   <circle r="5" className="wf-packet"><animateMotion dur="3.2s" begin="0.4s" repeatCount="indefinite"><mpath xlinkHref="#wire-3"/></animateMotion></circle>
@@ -873,10 +874,9 @@ export function LandingBody() {
               </a>
               <p>The decentralised marketplace for specialised AI agents. Built for builders, in orbit since 2024.</p>
               <div className="foot-socials">
-                <a href="#" aria-label="X"><i className="bi bi-twitter-x"></i></a>
-                <a href="#" aria-label="LinkedIn"><i className="bi bi-linkedin"></i></a>
-                <a href="#" aria-label="GitHub"><i className="bi bi-github"></i></a>
-                <a href="#" aria-label="Discord"><i className="bi bi-discord"></i></a>
+                <a href="https://www.linkedin.com/in/shekel-235565408" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i className="bi bi-linkedin"></i></a>
+                <a href="https://www.facebook.com/shekelaiofficial/" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i className="bi bi-facebook"></i></a>
+                <a href="https://www.instagram.com/shekelaiofficial/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i className="bi bi-instagram"></i></a>
               </div>
             </div>
             <div className="foot-col">
@@ -927,66 +927,7 @@ export function LandingBody() {
             <button className="modal-close" aria-label="Close" data-close={true}><i className="bi bi-x-lg"></i></button>
       
             
-            <div className="modal-step modal-step-form" data-step="form">
-              <div className="modal-mascot"><img src="/assets/mascot_jetpack.png" alt="" /></div>
-              <span className="eyebrow eyebrow-live modal-eyebrow">
-                <span className="eyebrow-dot"></span>
-                Pre-launch · closed beta opens Q3 2026
-              </span>
-              <h2 id="signupTitle" className="modal-title">Reserve your spot on <span className="grad-flow">Shekel</span>.</h2>
-              <p className="modal-sub">Join <strong>3,184 builders, founders and operators</strong> on the waitlist. Early-access members get <strong>$20 in run credit</strong> on launch day and a dedicated Discord channel for shaping the roadmap.</p>
-      
-              <form className="modal-form" id="waitlistForm" noValidate>
-                <label className="field">
-                  <span className="field-label">Name</span>
-                  <div className="field-input">
-                    <i className="bi bi-person-fill"></i>
-                    <input type="text" name="name" id="f-name" placeholder="Ada Lovelace" autoComplete="name" required />
-                  </div>
-                </label>
-                <label className="field">
-                  <span className="field-label">Email</span>
-                  <div className="field-input">
-                    <i className="bi bi-envelope-fill"></i>
-                    <input type="email" name="email" id="f-email" placeholder="ada@analyticalengines.co" autoComplete="email" required />
-                  </div>
-                </label>
-                <div className="field field-full">
-                  <span className="field-label">I am a…</span>
-                  <div className="role-row" role="radiogroup" aria-label="Role">
-                    <label className="role"><input type="radio" name="role" value="builder" checked /><span><i className="bi bi-braces-asterisk"></i>Builder</span></label>
-                    <label className="role"><input type="radio" name="role" value="buyer" /><span><i className="bi bi-bag-check-fill"></i>Buyer</span></label>
-                    <label className="role"><input type="radio" name="role" value="founder" /><span><i className="bi bi-rocket-takeoff-fill"></i>Founder</span></label>
-                    <label className="role"><input type="radio" name="role" value="curious" /><span><i className="bi bi-stars"></i>Curious</span></label>
-                  </div>
-                </div>
-      
-                <button type="submit" className="btn btn-primary btn-glow btn-lg modal-submit">
-                  <span className="submit-default">Reserve my spot <i className="bi bi-arrow-right"></i></span>
-                  <span className="submit-loading"><span className="spinner"></span> Securing your seat…</span>
-                </button>
-                <p className="modal-fine">By signing up you agree to occasional product updates. We won't share your email. Unsubscribe anytime.</p>
-              </form>
-            </div>
-      
-            
-            <div className="modal-step modal-step-done" data-step="done">
-              <div className="success-orbit">
-                <div className="success-ring"></div>
-                <div className="success-check"><i className="bi bi-check-lg"></i></div>
-              </div>
-              <h2 className="modal-title">You're in, <span className="grad-flow" id="successName">friend</span>.</h2>
-              <p className="modal-sub">You're <strong>#3,185</strong> on the waitlist. We'll email <strong id="successEmail">you</strong> the moment your spot opens up.</p>
-              <div className="success-perks">
-                <div className="perk"><i className="bi bi-coin"></i><div><strong>$20 in run credit</strong><span>auto-applied on launch day</span></div></div>
-                <div className="perk"><i className="bi bi-discord"></i><div><strong>Founders Discord</strong><span>invite incoming · shape the roadmap</span></div></div>
-                <div className="perk"><i className="bi bi-lightning-charge-fill"></i><div><strong>Skip the queue</strong><span>refer a friend, move up 50 spots</span></div></div>
-              </div>
-              <div className="success-cta">
-                <button className="btn btn-primary btn-glow" data-close={true}>Back to exploring</button>
-                <a href="#" className="btn btn-ghost"><i className="bi bi-twitter-x"></i> Share on X</a>
-              </div>
-            </div>
+            <WaitlistModal />
           </div>
         </div>
       

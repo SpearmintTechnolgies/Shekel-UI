@@ -147,25 +147,12 @@ export function initLandingEffects(): () => void {
   }
 
   const modal = document.getElementById("signupModal") as HTMLElement | null;
-  const formStep = modal?.querySelector('[data-step="form"]');
-  const doneStep = modal?.querySelector('[data-step="done"]');
-  const nameInput = document.getElementById("f-name") as HTMLInputElement | null;
-  const emailInput = document.getElementById("f-email") as HTMLInputElement | null;
-  const submitBtn = modal?.querySelector(".modal-submit");
-
-  const showStep = (which: "form" | "done") => {
-    if (!modal) return;
-    [formStep, doneStep].forEach((s) => s?.classList.remove("is-active"));
-    const target = which === "done" ? doneStep : formStep;
-    target?.classList.add("is-active");
-  };
 
   const openModal = () => {
     if (!modal) return;
-    showStep("form");
     modal.hidden = false;
     document.body.classList.add("modal-open");
-    setTimeout(() => nameInput?.focus(), 200);
+    window.dispatchEvent(new CustomEvent("shekel:waitlist-open"));
   };
 
   const closeModal = () => {
@@ -206,40 +193,6 @@ export function initLandingEffects(): () => void {
     cleanups.push(() =>
       heroSearch.replaceWith(heroSearch.cloneNode(true)),
     );
-  }
-
-  const form = document.getElementById("waitlistForm");
-  if (form && nameInput && emailInput && submitBtn) {
-    const onSubmit = (e: Event) => {
-      e.preventDefault();
-      const name = (nameInput.value || "").trim();
-      const email = (emailInput.value || "").trim();
-      const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-      nameInput.parentElement?.classList.toggle("has-error", !name);
-      emailInput.parentElement?.classList.toggle("has-error", !emailOk);
-      if (!name || !emailOk) return;
-
-      submitBtn.classList.add("is-loading");
-      setTimeout(() => {
-        submitBtn.classList.remove("is-loading");
-        const firstName = name.split(/\s+/)[0];
-        const successName = document.getElementById("successName");
-        const successEmail = document.getElementById("successEmail");
-        if (successName) successName.textContent = firstName;
-        if (successEmail) successEmail.textContent = email;
-        const counterWait = document.getElementById("counterWait");
-        if (counterWait) counterWait.textContent = "3,185";
-        showStep("done");
-      }, 1100);
-    };
-    form.addEventListener("submit", onSubmit);
-    cleanups.push(() => form.removeEventListener("submit", onSubmit));
-
-    [nameInput, emailInput].forEach((el) => {
-      const onInput = () => el.parentElement?.classList.remove("has-error");
-      el.addEventListener("input", onInput);
-      cleanups.push(() => el.removeEventListener("input", onInput));
-    });
   }
 
   const nav = document.getElementById("nav");

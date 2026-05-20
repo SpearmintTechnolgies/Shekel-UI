@@ -40,7 +40,14 @@ jsx = jsx.replace(/\sclass=/g, " className=");
 jsx = jsx.replace(/\sfor=/g, " htmlFor=");
 jsx = jsx.replace(/\stabindex=/g, " tabIndex=");
 jsx = jsx.replace(/\sreadonly\b/g, " readOnly");
-jsx = jsx.replace(/\schecked\b/g, " defaultChecked");
+jsx = jsx.replace(
+  /<input([^>]*?) name="role"([^>]*?) checked([^>]*?)\/?>/gi,
+  '<input$1 name="role"$2 defaultChecked$3 />',
+);
+jsx = jsx.replace(
+  /<input([^>]*?) checked([^>]*?) name="role"([^>]*?)\/?>/gi,
+  '<input$1 defaultChecked$2 name="role"$3 />',
+);
 jsx = jsx.replace(/\sautocomplete=/g, " autoComplete=");
 jsx = jsx.replace(/\snovalidate\b/g, " noValidate");
 jsx = jsx.replace(/\sonsubmit="[^"]*"/gi, "");
