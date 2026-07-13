@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { upsertBrevoContact } from "@/lib/brevo";
 import { appendWaitlistRow } from "@/lib/google-sheet";
+import { sendWaitlistNotifyEmail } from "@/lib/waitlist-notify";
 import { parseWaitlistBody, toWaitlistRecord } from "@/lib/waitlist-parse";
 
 export async function POST(request: Request) {
@@ -41,6 +42,12 @@ export async function POST(request: Request) {
     await appendWaitlistRow(record);
   } catch (err) {
     console.error("[waitlist] Google Sheet failed (Brevo ok):", err);
+  }
+
+  try {
+    await sendWaitlistNotifyEmail(record);
+  } catch (err) {
+    console.error("[waitlist] Notify email failed (Brevo contact ok):", err);
   }
 
   return NextResponse.json({ ok: true });
