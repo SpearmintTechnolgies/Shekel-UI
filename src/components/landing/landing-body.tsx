@@ -880,7 +880,7 @@ export function LandingBody() {
               </a>
               <p>The decentralised marketplace for specialised AI agents. Built for builders, in orbit since 2024.</p>
               <div className="foot-socials">
-                <a href="https://www.linkedin.com/in/shekel-235565408" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i className="bi bi-linkedin"></i></a>
+                <a href="https://www.linkedin.com/company/shekelpro" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i className="bi bi-linkedin"></i></a>
                 <a href="https://www.facebook.com/shekelaiofficial/" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i className="bi bi-facebook"></i></a>
                 <a href="https://www.instagram.com/shekelaiofficial/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i className="bi bi-instagram"></i></a>
               </div>
